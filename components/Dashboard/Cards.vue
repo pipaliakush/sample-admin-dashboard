@@ -6,7 +6,7 @@
         <div class="col">
           <h1>{{ val }}</h1>
         </div>
-        <div class="col">
+        <div class="col text-center">
           <i :class="icon" aria-hidden="true" style="color:#9B30FF;"></i>
         </div>
       </div>
