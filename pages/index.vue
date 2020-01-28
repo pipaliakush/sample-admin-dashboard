@@ -1,8 +1,8 @@
 <template>
   <div>
     <div id="mySidebar" class="sidebar">
-      <a class="closebtn">Qbook Admin Panel</a>
-      <a href="#" class="text-prpl">
+      <h4>Qbook Admin Panel</h4>
+      <a href="javascript:void(0)" class="text-prpl">
         <i class="fa fa-home" aria-hidden="true"></i>
         Dashboard
       </a>
@@ -88,6 +88,7 @@ body {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  white-space: nowrap;
 }
 
 .sidebar a {
@@ -96,16 +97,23 @@ body {
   font-size: 18px;
   display: block;
   transition: 0.3s;
+  white-space: nowrap;
 }
 
 .sidebar a:hover {
   color: #9b30ff;
+  white-space: nowrap;
 }
 
 .sidebar .closebtn {
   position: absolute;
   top: 0;
   font-size: 22px;
+}
+
+.sidebar h4 {
+  margin-top: -42px;
+  margin-left: 15px;
 }
 
 .openbtn {
