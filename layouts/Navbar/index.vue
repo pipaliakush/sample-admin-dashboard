@@ -1,12 +1,28 @@
 <template>
   <div>
     <b-navbar type="dark" variant="info" class="nav1">
-      <button class="openbtn" @click="openNav" style="background-color:#9B30FF;">☰</button>
+      <button
+        class="openbtn"
+        @click="openNav"
+        style="background-color:#9B30FF;"
+      >
+        ☰
+      </button>
 
       <b-navbar-nav class="ml-auto">
-        <b-nav-item href="#" class="black-clr">Home</b-nav-item>
-        <b-nav-item href="#" class="black-clr">Quotes</b-nav-item>
-        <b-nav-item href="#" class="black-clr">Admin Panel</b-nav-item>
+        <b-nav-item
+          to="/"
+          class="black-clr"
+          :active="$route.name == 'index' ? true : false"
+          >Home</b-nav-item
+        >
+        <b-nav-item
+          to="/user"
+          class="black-clr"
+          :active="$route.name == 'user' ? true : false"
+          >Users</b-nav-item
+        >
+        <!-- <b-nav-item href="#" class="black-clr">Admin Panel</b-nav-item> -->
         <b-nav-item-dropdown right>
           <template v-slot:button-content>
             <em style="color: black;">John Doe</em>
@@ -29,12 +45,12 @@ export default {
   methods: {
     openNav() {
       if (!this.a) {
-        document.getElementById('main').style.marginLeft = '250px';
-        document.getElementById('mySidebar').style.width = '250px';
+        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("mySidebar").style.width = "250px";
         this.a = !this.a;
       } else {
-        document.getElementById('mySidebar').style.width = '0';
-        document.getElementById('main').style.marginLeft = '0';
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
         this.a = !this.a;
       }
     }

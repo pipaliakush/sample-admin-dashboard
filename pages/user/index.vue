@@ -10,7 +10,8 @@
 
     <div id="main">
       <Navbar />
-      <div class="p-3 row nomargin">
+      <Users class="m-3" />
+      <!-- <div class="p-3 row nomargin">
         <Cards name="OEMS" val="12" icon="fa fa-briefcase fa-3x" />
         <Cards name="PRODUCT TYPES" val="6" icon="fa fa-tag fa-3x" />
         <Cards name="PRODUCTS" val="742" icon="fa fa-list fa-3x" />
@@ -19,29 +20,26 @@
       <div class="pb-3 pr-3 pl-3 row nomargin">
         <BarChart :maxValue="30" class="p-3 col-lg-6 col-md-12 col-sm-12" />
         <Calender class="p-3 col-lg-6 col-md-6 col-sm-12" />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
 import Navbar from "@/layouts/Navbar/index.vue";
-import Cards from "@/components/Dashboard/Cards.vue";
-import BarChart from "@/components/Dashboard/BarChart.vue";
-import Calender from "@/components/Dashboard/Calender.vue";
+// import Cards from "@/components/Dashboard/Cards.vue";
+import Users from "@/components/users/index.vue";
+// import Calender from "@/components/Dashboard/Calender.vue";
 
 export default {
   components: {
-    BarChart,
-    Calender,
     Navbar,
-    Cards
+    Users
   },
   async asyncData({ store, query, app, redirect, route }) {
     // store.commit("isLoading", true);
-
     await store
-      .dispatch("getAllUsers")
+      .dispatch("getAllUsers", query)
       .then(() => {
         // store.commit("isLoading", false);
       })
